@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/oneTv"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="第一页"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/oneTv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/oneTv"
+        android:background="#ffeedd"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="数据"
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/oneBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textSize="16dp"
+        android:padding="6dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:text="共享数据" />
+
+</RelativeLayout>

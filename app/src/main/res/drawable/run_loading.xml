@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation-list android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="160" android:drawable="@mipmap/icon_run1" />
+    <item android:duration="160" android:drawable="@mipmap/icon_run2" />
+    <item android:duration="160" android:drawable="@mipmap/icon_run3" />
+    <item android:duration="160" android:drawable="@mipmap/icon_run4" />
+    <item android:duration="160" android:drawable="@mipmap/icon_run5" />
+    <item android:duration="160" android:drawable="@mipmap/icon_run6" />
+</animation-list>
