@@ -40,13 +40,13 @@ public class TwoFragment extends Fragment {
 
         mainView2Model.itemALive.observe(this, new Observer<String>() {
             @Override
-            public void onChanged(@Nullable String string) {
+            public void onChanged(@Nullable String string) { //创建一个观察监听器
                 twoTv.setText(string);
             }
         });
         mainView2Model.itemListLive.observe(this, new Observer<SparseArray<String>>() {
             @Override
-            public void onChanged(@Nullable SparseArray<String> stringSparseArray) {
+            public void onChanged(@Nullable SparseArray<String> stringSparseArray) { //创建一个观察监听器
                 myRecyclerViewAdapter.notifyDataSetChanged();
             }
         });
@@ -59,7 +59,9 @@ public class TwoFragment extends Fragment {
 
         public MyRecyclerViewAdapter(RecyclerView recyclerView,SparseArray<String> dataList) {
             this.mContext = recyclerView.getContext();
-            this.dataList = dataList;
+            if (null != dataList) {
+                this.dataList = dataList;
+            }
         }
 
         public void setData(SparseArray<String> dataList) {

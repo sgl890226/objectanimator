@@ -35,13 +35,7 @@ public class Main2Activity extends AppCompatActivity implements BottomNavigation
         flContent = findViewById(R.id.flContent);
         bottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         mainViewModel = ViewModelProviders.of(this).get(MainView2Model.class);
-//        mainViewModel.itemALive.observe(this,new Observer<Integer>(){
-//
-//            @Override
-//            public void onChanged(@Nullable Integer integer) {
-//               // tvA.setText(integer+"");
-//            }
-//        });
+
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED)
                 .setInActiveColor(R.color.color_ff333333)
                 .setActiveColor(R.color.colorPrimary)

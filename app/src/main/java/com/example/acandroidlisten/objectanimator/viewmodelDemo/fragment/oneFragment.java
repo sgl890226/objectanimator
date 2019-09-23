@@ -47,7 +47,7 @@ public class oneFragment extends Fragment {
 
         oneBt.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //给被观察者MutableLiveData的对象设置值，值改变了，就会回调上面的观察监听器
                 mainView2Model.changeItem();
                // Toast.makeText(oneFragment.this.getActivity(),"ssss",Toast.LENGTH_SHORT).show();
             }
