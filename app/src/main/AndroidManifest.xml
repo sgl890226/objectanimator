@@ -23,6 +23,7 @@
         <activity android:name=".viewmodelDemo.Main2Activity"></activity>
         <activity android:name=".MyProgressBar.MainProActivity"></activity>
         <activity android:name=".animator.MainAnimatorActivity"></activity>
+        <activity android:name=".Lifecycle.MyActivity"></activity>
     </application>
 
 </manifest>

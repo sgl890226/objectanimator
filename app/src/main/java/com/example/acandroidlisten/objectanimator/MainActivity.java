@@ -17,6 +17,7 @@ import android.view.animation.BounceInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 
+import com.example.acandroidlisten.objectanimator.Lifecycle.MyActivity;
 import com.example.acandroidlisten.objectanimator.MyProgressBar.MainProActivity;
 import com.example.acandroidlisten.objectanimator.animator.MainAnimatorActivity;
 import com.example.acandroidlisten.objectanimator.viewmodelDemo.Main1Activity;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn2).setOnClickListener(this);
         findViewById(R.id.btn3).setOnClickListener(this);
         findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
 
     }
 
@@ -53,6 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn4:
                 intent = new Intent(this, MainProActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btn5:
+                intent = new Intent(this, MyActivity.class);
                 startActivity(intent);
                 break;
         }

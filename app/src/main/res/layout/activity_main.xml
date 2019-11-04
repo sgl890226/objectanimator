@@ -49,5 +49,14 @@
         android:textSize="16dp"
         android:textColor="@color/colorPrimary"
         android:background="#ffffff" />
-
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="Lifecycle案例"
+        android:textSize="16dp"
+        android:textColor="@color/colorPrimary"
+        android:background="#ffffff" />
 </LinearLayout>
