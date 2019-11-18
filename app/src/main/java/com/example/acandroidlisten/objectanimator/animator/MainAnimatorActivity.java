@@ -13,8 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.acandroidlisten.objectanimator.R;
 
@@ -27,7 +29,9 @@ public class MainAnimatorActivity extends AppCompatActivity {
 
 
         Button tvButton = findViewById(R.id.tvButton);
+        Button tvButton1 = findViewById(R.id.tvButton1);
         final View ivMain = findViewById(R.id.ivMain);
+        final ImageView ivCurriculum = findViewById(R.id.ivCurriculum);
         final ObjectAnimator objectAnimator = ObjectAnimator.ofInt(tvButton, "textColor", 0xffffffff, 0xffff0000);
         objectAnimator.setDuration(3000);
         objectAnimator.setRepeatCount(Animation.INFINITE);
@@ -43,6 +47,55 @@ public class MainAnimatorActivity extends AppCompatActivity {
                 startObjectAnimator(ivMain);
             }
         });
+        tvButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  startObjectAnimator1(ivCurriculum);
+                showAnimation(ivCurriculum);
+            }
+        });
+    }
+    /**
+     * 设置动画
+     */
+    private void showAnimation(View view) {
+        // 获取自定义动画实例
+        CustomRotateAnim rotateAnim = CustomRotateAnim.getCustomRotateAnim();
+        // 一次动画执行1秒
+        rotateAnim.setDuration(500);
+        // 设置为循环播放
+        rotateAnim.setRepeatCount(2);
+        // 设置为匀速
+        rotateAnim.setInterpolator(new LinearInterpolator());
+        // 开始播放动画
+        view.startAnimation(rotateAnim);
+    }
+
+    /**
+     * 开启动画
+     */
+    private void startObjectAnimator1(View view){
+        try {
+            view.setVisibility(View.VISIBLE);
+//            ObjectAnimator  objectAnimator0 = ObjectAnimator.ofFloat(view, "scaleX", 0.5f, 1.0f);
+//            ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(view, "scaleY", 0.5f, 1.0f);
+            ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(view, "rotationY",0,80);
+            ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(view, "rotationY",80,0);
+            ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(view, "rotationY",0,-80);
+            ObjectAnimator objectAnimator4 = ObjectAnimator.ofFloat(view, "rotationY",-80,0);
+//            objectAnimator2.setInterpolator(new OvershootInterpolator());
+//            objectAnimator2.setDuration(50);
+//            objectAnimator2.setRepeatCount(2);
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.playTogether( objectAnimator1,objectAnimator2,objectAnimator3,objectAnimator4);
+            animatorSet.setDuration(800);
+            animatorSet.setInterpolator(new BounceInterpolator());
+            //animatorSet.setInterpolator(new SpringInterpolator(0.3f));
+            animatorSet.start();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 
     }
     /**
