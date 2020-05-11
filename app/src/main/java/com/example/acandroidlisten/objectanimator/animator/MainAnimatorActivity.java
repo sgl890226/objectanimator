@@ -26,8 +26,6 @@ public class MainAnimatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_ani);
-
-
         Button tvButton = findViewById(R.id.tvButton);
         Button tvButton1 = findViewById(R.id.tvButton1);
         final View ivMain = findViewById(R.id.ivMain);
@@ -50,13 +48,13 @@ public class MainAnimatorActivity extends AppCompatActivity {
         tvButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  startObjectAnimator1(ivCurriculum);
-                showAnimation(ivCurriculum);
+                startObjectAnimator1(ivCurriculum);
+              //  showAnimation(ivCurriculum);
             }
         });
     }
     /**
-     * 设置动画
+     * 设置动画 - 铃铛左右摆动
      */
     private void showAnimation(View view) {
         // 获取自定义动画实例
@@ -77,21 +75,17 @@ public class MainAnimatorActivity extends AppCompatActivity {
     private void startObjectAnimator1(View view){
         try {
             view.setVisibility(View.VISIBLE);
-//            ObjectAnimator  objectAnimator0 = ObjectAnimator.ofFloat(view, "scaleX", 0.5f, 1.0f);
+            ObjectAnimator  objectAnimator2 = ObjectAnimator.ofFloat(view, "translationY", -115.0f,115f,0f);
 //            ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(view, "scaleY", 0.5f, 1.0f);
-            ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(view, "rotationY",0,80);
-            ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(view, "rotationY",80,0);
-            ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(view, "rotationY",0,-80);
-            ObjectAnimator objectAnimator4 = ObjectAnimator.ofFloat(view, "rotationY",-80,0);
-//            objectAnimator2.setInterpolator(new OvershootInterpolator());
-//            objectAnimator2.setDuration(50);
+            objectAnimator2.setInterpolator(new OvershootInterpolator());
+            objectAnimator2.setDuration(200);
+            objectAnimator2.start();
 //            objectAnimator2.setRepeatCount(2);
-            AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.playTogether( objectAnimator1,objectAnimator2,objectAnimator3,objectAnimator4);
-            animatorSet.setDuration(800);
-            animatorSet.setInterpolator(new BounceInterpolator());
-            //animatorSet.setInterpolator(new SpringInterpolator(0.3f));
-            animatorSet.start();
+//            AnimatorSet animatorSet = new AnimatorSet();
+//            animatorSet.playTogether( objectAnimator1,objectAnimator2,objectAnimator3,objectAnimator4);
+//            animatorSet.setDuration(800);
+//            animatorSet.setInterpolator(new BounceInterpolator());
+//            animatorSet.start();
         }catch (Exception e){
             e.printStackTrace();
         }
